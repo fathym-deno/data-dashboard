@@ -1,5 +1,7 @@
 import { EaCRuntimeHandlerResult, PageProps } from '@fathym/eac/runtime';
-import Chart from '../components/Chart.tsx';
+import LiveStreamChart from '../components/charts/LiveStreamChart.tsx';
+import { ChartDataset } from 'npm:chart.js';
+import UserIDsChart from '../components/UserIDsChart.tsx';
 
 export const handler: EaCRuntimeHandlerResult = {
   GET: (_req, ctx) => {
@@ -19,10 +21,10 @@ export default function Index({ Data }: PageProps) {
           <p class='text-lg'>
             Bring your applications and ideas to life with ease.
           </p>
+        </div>
 
-          <div class='flex flex-row py-8'>
-            <Chart />
-          </div>
+        <div class='flex flex-row py-8 align-center'>
+          <UserIDsChart class='max-w-lg max-h-[400px]' />
         </div>
       </div>
 
